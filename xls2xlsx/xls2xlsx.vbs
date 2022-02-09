@@ -1,24 +1,24 @@
-' ’è”
-Const XlFileFormat_xlOpenXMLWorkbook = 51 ' .xlsx : Excel ƒuƒbƒN
+' å®šæ•°
+Const XlFileFormat_xlOpenXMLWorkbook = 51 ' .xlsx : Excel ãƒ–ãƒƒã‚¯
 
-' ƒhƒ‰ƒbƒOƒhƒƒbƒv‚Å“n‚³‚ê‚½ƒtƒ@ƒCƒ‹‚ğ•¶š—ñ‚Åæ‚è‚ŞBƒƒbƒZ[ƒW—pB
+' ãƒ‰ãƒ©ãƒƒã‚°ãƒ‰ãƒ­ãƒƒãƒ—ã§æ¸¡ã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ–‡å­—åˆ—ã§å–ã‚Šè¾¼ã‚€ã€‚ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ç”¨ã€‚
 set args = WScript.Arguments
 fileList = ""
 for each arg in args
   fileList = fileList & vbNewLine & arg
 next
 
-' ˆø”‚Ìƒ`ƒFƒbƒNB‘ÎÛƒtƒ@ƒCƒ‹ˆÈŠO‚ª¬‚´‚Á‚Ä‚¢‚éê‡I—¹B
+' å¼•æ•°ã®ãƒã‚§ãƒƒã‚¯ã€‚å¯¾è±¡ãƒ•ã‚¡ã‚¤ãƒ«ä»¥å¤–ãŒæ··ã–ã£ã¦ã„ã‚‹å ´åˆçµ‚äº†ã€‚
 set fobj = CreateObject("Scripting.FileSystemObject")
 for each arg in args
     ext = fobj.GetextensionName(arg)
     if ext <> "xls" then
-        msgbox "xlsƒtƒ@ƒCƒ‹ˆÈŠO‚ªw’è‚³‚ê‚Ü‚µ‚½BI—¹‚µ‚Ü‚·B" & vbNewLine & fileList
+        msgbox "xlsãƒ•ã‚¡ã‚¤ãƒ«ä»¥å¤–ãŒæŒ‡å®šã•ã‚Œã¾ã—ãŸã€‚çµ‚äº†ã—ã¾ã™ã€‚" & vbNewLine & fileList
         WScript.Quit
     end if
 next
 
-' ˆø”‚Å–á‚Á‚½ŠeExcelƒtƒ@ƒCƒ‹‚ğÅV‚ÌŒ`®‚Å•Û‘¶‚·‚éB
+' å¼•æ•°ã§è²°ã£ãŸå„Excelãƒ•ã‚¡ã‚¤ãƒ«ã‚’æœ€æ–°ã®å½¢å¼ã§ä¿å­˜ã™ã‚‹ã€‚
 set oXlsApp = CreateObject("Excel.Application")
 for each path in args
     oXlsApp.Application.Visible = true
@@ -29,4 +29,4 @@ next
 oXlsApp.Quit
 set oXlsApp = nothing
 
-msgbox "•ÏŠ·Š®—¹‚µ‚Ü‚µ‚½B"
+msgbox "å¤‰æ›å®Œäº†ã—ã¾ã—ãŸã€‚"
